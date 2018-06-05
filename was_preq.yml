@@ -1,0 +1,10 @@
+---
+- hosts: WAS
+  gather_facts: false
+  become: true
+  tasks:
+   - name: copy bash script for prerequisite
+     template: src=was_preq.sh.j2 dest=/tmp/was_preq.sh mode=777
+
+   - name: running prequisite on {{ was_hostname }}
+     shell: sh /tmp/was_preq.sh 

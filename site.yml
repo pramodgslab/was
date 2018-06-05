@@ -1,0 +1,10 @@
+---
+- name: Downloading and Installation of IM
+  gather_facts: no
+  become: yes
+  hosts: WAS
+  roles:
+   - im
+   - was
+   - profile
+   - deploywebapp

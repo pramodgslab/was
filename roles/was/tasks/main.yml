@@ -1,0 +1,4 @@
+---
+- name: running WAS installation
+  shell: "/opt/IBM/InstallationManager/eclipse/tools/imcl install com.ibm.websphere.BASE.v85_8.5.5000.20130514_1044 -repositories {{was_path}}/repository.config -acceptLicense -showProgress -record install_was.xml"
+  tags: [was_install,was]

@@ -1,0 +1,13 @@
+umask 022
+setenforce 0
+hostname {{was_hostname}}
+echo "127.0.0.1 {{ was_hostname }}"  >> /etc/hosts
+service iptables stop
+cd {{ im_path }}
+unzip {{ im_artifact }} 
+cd {{ was_path }}
+{% for was in was_artifacts %}
+ unzip {{ was }}
+{% endfor %}
+cd
+

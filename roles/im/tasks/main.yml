@@ -1,0 +1,4 @@
+---
+- name: running IM installation
+  shell: "{{im_path}}/tools/imcl install com.ibm.cic.agent -repositories {{im_path}}/repository.config -acceptLicense -showProgress"
+  tags: [im_install,im]
